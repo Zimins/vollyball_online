@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/bounce.unity
+- path: Assets/Scenes/bounce.unity
   isLoaded: 1
   isActive: 1
