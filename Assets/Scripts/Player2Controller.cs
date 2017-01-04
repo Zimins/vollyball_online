@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player1Controller : MonoBehaviour {
+public class Player2Controller : MonoBehaviour {
+
 
 	CharacterController controller;
 
@@ -10,29 +11,24 @@ public class Player1Controller : MonoBehaviour {
 	public float gravity;
 	public float speedJump;
 	public float speedX;
-
-
 	// Use this for initialization
 	void Start () {
 		controller = GetComponent<CharacterController> ();
-
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
-	
-		if (Input.GetKey (KeyCode.RightArrow)) {
+
+		if (Input.GetKey (KeyCode.D)) {
 			moveDirection.x = Input.GetAxis ("Horizontal") * speedX;
-		} else if (Input.GetKey (KeyCode.LeftArrow)) {
+		} else if (Input.GetKey (KeyCode.A)) {
 			moveDirection.x = Input.GetAxis ("Horizontal") * speedX;
 		} else {
 			moveDirection.x = 0;
 		}
 
-
-
 		if (controller.isGrounded) {
-			if(Input.GetKey(KeyCode.UpArrow))
+			if(Input.GetKey(KeyCode.W))
 			{
 				moveDirection.y = speedJump;
 
@@ -40,10 +36,10 @@ public class Player1Controller : MonoBehaviour {
 		}
 
 
-
 		moveDirection.y -= gravity * Time.deltaTime;
 
 		Vector3 globalDirection = transform.TransformDirection (moveDirection);
 		controller.Move (globalDirection * Time.deltaTime);
+	
 	}
 }
