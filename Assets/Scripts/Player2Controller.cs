@@ -5,6 +5,7 @@ public class Player2Controller : MonoBehaviour {
 
 
 	CharacterController controller;
+	Animator anim;
 
 	Vector3 moveDirection;
 
@@ -14,20 +15,27 @@ public class Player2Controller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		controller = GetComponent<CharacterController> ();
+		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		if (Input.GetKey (KeyCode.D)) {
-			moveDirection.x = Input.GetAxis ("Horizontal") * speedX;
+			moveDirection.z = Input.GetAxis ("Horizontal") * speedX;
+			anim.SetBool ("Walk Forward",true);
 		} else if (Input.GetKey (KeyCode.A)) {
-			moveDirection.x = Input.GetAxis ("Horizontal") * speedX;
+			moveDirection.z = Input.GetAxis ("Horizontal") * speedX;
+			anim.SetBool ("Walk Backward",true);
 		} else {
-			moveDirection.x = 0;
+			moveDirection.z = 0;
+			anim.SetBool("Walk Forward",false);
+			anim.SetBool ("Walk Backward",false);
 		}
 
 		if (controller.isGrounded) {
+
+
 			if(Input.GetKey(KeyCode.W))
 			{
 				moveDirection.y = speedJump;
@@ -41,5 +49,10 @@ public class Player2Controller : MonoBehaviour {
 		Vector3 globalDirection = transform.TransformDirection (moveDirection);
 		controller.Move (globalDirection * Time.deltaTime);
 	
+	}
+
+	void Animating(float x)
+	{
+		
 	}
 }

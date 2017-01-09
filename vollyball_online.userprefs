@@ -5,6 +5,8 @@
       <File FileName="Assets/Scripts/Player2Controller.cs" Line="31" Column="24" />
       <File FileName="Assets/Scripts/Player1Controller.cs" Line="1" Column="1" />
       <File FileName="Assets/Fighter Pack Bundle Free/Code/FighterAnimationDemo.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player1Controller.cs" Line="7" Column="20" />
+      <File FileName="Assets/Fighter Pack Bundle Free/Code/FighterAnimationDemo.cs" Line="20" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

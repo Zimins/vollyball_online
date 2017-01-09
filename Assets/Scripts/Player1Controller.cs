@@ -4,6 +4,7 @@ using System.Collections;
 public class Player1Controller : MonoBehaviour {
 
 	CharacterController controller;
+	Animator animator;
 
 	Vector3 moveDirection;
 
@@ -15,6 +16,7 @@ public class Player1Controller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		controller = GetComponent<CharacterController> ();
+		animator = GetComponent<Animator>();
 
 	}
 
