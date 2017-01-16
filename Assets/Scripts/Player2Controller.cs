@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
+
 using System.Collections;
 
-public class Player2Controller : MonoBehaviour {
+public class Player2Controller : NetworkBehaviour {
 
 
 	CharacterController controller;
@@ -21,6 +23,9 @@ public class Player2Controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (!isLocalPlayer) {
+			return;
+		}
 		if (Input.GetKey (KeyCode.D)) {
 			moveDirection.z = Input.GetAxis ("Horizontal") * speedX;
 			anim.SetBool ("Walk Forward",true);
